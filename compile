@@ -1,0 +1,2 @@
+nimble install nimpy
+nim c --app:lib --out:qhttp.so --threads:on -d:ssl qhttp
