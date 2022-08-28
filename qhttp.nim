@@ -9,7 +9,7 @@ type PyHttpResponse = ref object of PyNimObjectExperimental
   headers*: TableRef[string, seq[string]]
   version*: string
 
-proc json(self: PyHttpResponse): JsonNode = 
+proc json(self: PyHttpResponse): JsonNode {.exportpy.} = 
   return parseJson(self.content)
 
 proc newPyHttpResponse(resp: Response): PyHttpResponse = 

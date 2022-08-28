@@ -1,7 +1,7 @@
 from .nim import qhttp
 class ResponseWrapper:
     def __init__(self, obj):
-        
+        print(obj.status)
         self.__dict__.update(obj.__dict__.copy())
         response = self.content
         self.default_content = response
@@ -14,6 +14,5 @@ class ResponseWrapper:
 
 def get(url):
     out = qhttp.get(url)
-    print(out.__dict__)
     return ResponseWrapper(out)
     
